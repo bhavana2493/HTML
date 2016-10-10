@@ -1,0 +1,49 @@
+<html>
+    <head> <title> Html Calculator </title>
+    
+      <script>
+        
+        function myfunction()
+        {
+        var x = Number(document.getElementById("txt1").value);
+        var opt = document.getElementById("opt").value;
+        var y = Number(document.getElementById("txt3").value);
+        var calculate;
+        switch(opt)
+        {
+            case "add":      calculate = x + y;   break;   
+            case "sub":      calculate = x - y;   break;   
+            case "multiply": calculate = x * y;   break;
+            case "div":      calculate = x / y;   break;
+            case "mod":      calculate = x % y; break;  
+            default : alert("only + - * / allowed");
+        }
+          //  document.write(calculate);
+            document.getElementById("demo").innerHTML= calculate;        
+        }
+        </script>
+        
+    
+    </head>
+    <meta charset="utf-8"/>
+    <body>
+    <input type="text" id="demo">
+        <table>
+        <form >
+            <tr> <td><input type="text" id="txt1" name="txt1" value="First Number"/> </td>
+            <td>  <select id="opt" name="opt">
+                <option value="add">add(+) </option>
+                <option value="sub">sub(-) </option>
+                <option value="multiply">multiply(*)</option>
+                <option value="div">div(/)</option>
+                <option value="mod">mod(%)</option>
+                </select></td>
+            <td> <input type="text" id="txt3" name="txt3" value="second number"/></td>
+            <td> <button onclick="myfunction()" >calculate </button> </td>
+            </tr>
+            
+      </form>
+      </table>
+    
+    </body>
+</html>

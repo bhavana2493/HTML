@@ -1,0 +1,27 @@
+<html>
+    <head> <title> Html Calculator </title></head>
+    <meta charset="utf-8"/>
+    <script>
+        
+        function myfunction()
+        {
+        var x = parseInt(document.getElementById("txt1").value);
+        var opt = document.getElementById("txt2").value;
+        var y = parseInt(document.getElementById("txt3").value);
+        
+    
+        document.write(x opt y);
+        }
+        </script>
+        <body>
+        <table>
+        <form >
+            <tr> <td><input type="text" id="txt1" name="txt1" value="First Number"/> </td>
+            <td>  <input type="text" id="txt2" name="txt2" value="Drop Down"/></td>
+            <td> <input type="text" id="txt3" name="txt3" value="second number"/></td>
+            <td> <button onclick="myfunction()" >calculate </button> </td>
+            </tr>
+      </form>
+      </table>
+    </body>
+</html>
