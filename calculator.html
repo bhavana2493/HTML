@@ -28,7 +28,18 @@
     </head>
     
     <body>
-        <table>
+        <style>
+            body {
+  background:gray;
+}
+        table  td { 
+    border : 2px solid red;
+}
+
+</style>
+<div align="center" style="vertical-align:middle">
+<div align="center" style="vertical-align:middle">
+        <table >
         <form name="operation">
             <tr>  <td><input type="text" id="num1" name="num1" />first number </td>
             <td>  <select id="opt" name="opt">
@@ -42,9 +53,14 @@
             
             <td> <input type="button" onclick="myfunction(opt.value)" value="calculate"/> </td>
     </tr>
-    <tr><td><input type="text" name="result"/>result</td></tr>
+    </table>
+    <table >
+   
+    <tr ><td colspan="4" align="center" ><input type="text" name="result"/>result</td></tr>
       </form>
       </table>
+</div>
+</div>
     
     </body>
 </html>
