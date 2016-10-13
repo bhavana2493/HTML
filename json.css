@@ -1,0 +1,32 @@
+/* background color of page */
+body {
+    
+    background-image: url("/home/bridgeit/Desktop/img2.jpg");
+    text-align : centre;
+}
+/* table content */
+table  {
+    border: 2px solid red;
+    background-color: #FF5942 ;
+    font-family: verdana;
+    font-size: 20px;
+    color: #AA0B45;
+    text-align : center;
+    height :60%;
+    width: 50%;
+    margin-left: 300px;
+    }
+/* digital clock */
+#clock {
+    font-size: 50px;
+    color:indigo;
+    font-weight: bold;  
+}
+/*image display */
+img {
+    border:3px solid #000099;
+    margin-right:80px;
+    margin-left: 80px;
+    width :60%;
+
+}
