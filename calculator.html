@@ -1,48 +1,54 @@
-<html>
-    <head> <title> Html Calculator </title>
-    <meta charset="utf-8"/>
-      <script type="text/javascript">
-      
+/** 
+*@Filename:calculate.html
+*@Date:11-10-2016
+*@Purpose:Calculation by using arithmatic operations
+*@Created By:Bhavana B K
+*/
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+  <meta charset="utf-8"/>
+  <title> Html Calculator </title>
+    <script type="text/javascript">
+      //function to calculate
         function myfunction(opt)
         {
-        var x = Number(document.operation.num1.value);
-        var y = Number(document.operation.num2.value);
-        var calculate;
-        switch(opt)
-        {
+         var x = Number(document.operation.num1.value);
+         var y = Number(document.operation.num2.value);
+         var calculate;
+         switch(opt)
+         {
             
             case  "add"    :  calculate = (x + y);   break;   
             case  "sub"     : calculate = (x - y);   break;   
             case  "multiply": calculate = (x * y);   break;
-            case  "div" : calculate = (x / y);   break;
-            case  "mod"  :    calculate = (x % y); break;  
-          //  default  alert("only + - * / allowed");
+            case  "div" :     calculate = (x / y);   break;
+            case  "mod"  :    calculate = (x % y);   break;  
+            default  :         alert("only + - * / allowed");
         }
-          //  document.write(calculate);
-           // document.getElementById("demo").innerHTML= calculate;        
-           document.operation.result.value= calculate;
-    }
-        </script>
-        
-    
-    </head>
-    
-    <body>
-        <style>
+           //document.write(calculate);
+           //document.getElementById("result").innerHTML= calculate;        
+             document.operation.result.value= calculate;
+       }
+    </script>
+  </head>
+  <body>
+   <!--stylesheet......-->   
+    <style>
             body {
-  background:gray;
-}
-        table  td { 
-    border : 2px solid red;
-}
+               background:gray;
+            }
+            table  td { 
+               border : 2px solid red;
+            }
+    </style>
+    <!-- form which takes input-->
+    <div align="center" style="vertical-align:middle">
 
-</style>
-<div align="center" style="vertical-align:middle">
-<div align="center" style="vertical-align:middle">
         <table >
         <form name="operation">
             <tr>  <td><input type="text" id="num1" name="num1" />first number </td>
-            <td>  <select id="opt" name="opt">
+            <td>  <select id="opt" name="opt" -moz-border-radius="15">
                 <option value="add">add(+) </option>
                 <option value="sub">sub(-) </option>
                 <option value="multiply">multiply(*)</option>
@@ -50,17 +56,15 @@
                 <option value="mod">mod(%)</option>
                 </select></td>
             <td> <input type="text" id="num2" name="num2"/>second number</td>
+         
+            <td> <input type="button" onclick="myfunction(opt.value)" value="calculate" style="background-color:yellow" /> </td>
             
-            <td> <input type="button" onclick="myfunction(opt.value)" value="calculate"/> </td>
-    </tr>
-    </table>
-    <table >
-   
-    <tr ><td colspan="4" align="center" ><input type="text" name="result"/>result</td></tr>
-      </form>
-      </table>
-</div>
-</div>
-    
-    </body>
+           </tr>
+        </table>
+        <table >
+           <tr><td colspan="4" align="center" ><<input type="text" name="result" value="result" id="result"/>result </td></tr>
+        </form>
+        </table>
+     </div>
+   </body>
 </html>
