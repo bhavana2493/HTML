@@ -1,0 +1,86 @@
+/** 
+*@Filename:JSON.html
+*@Date:13-10-2016
+*@Purpose:Random article with digital clock
+*@Created By:Bhavana B K
+*/
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+   <meta charset="utf-8"/>
+   <title>Random article</title>
+
+   <!-- scripting -->
+   <script type="text/javascript">
+   
+   //function to display digital clock
+     function digclock() {
+         //date object is created
+          var d = new Date();
+          var h = d.getHours();
+          var m = d.getMinutes();
+          var s = d.getSeconds();
+          var ms= d.getMilliseconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById("clock").innerHTML =h + ":" + m + ":" + s + ":" + ms;
+          setTimeout(digclock,100);
+    }
+
+    // to prefix zero for >10
+    function checkTime(i){
+        if(i<10)
+        {i= "0"  + i;}
+        return i;
+    }
+
+    // store article content in JSON
+    var article = [{
+                "author": "Unknown",
+                "date": "Fri,April5,2002",
+                "publication": "Dallas Morning News",
+                "artContent":"/home/bridgeit/Desktop/bhavana/article1.jpg"
+            },
+              {  "author": "Unknown",
+                "date": "Jan 21",
+                "publication": "manchestar",
+                "artContent":"/home/bridgeit/Desktop/bhavana/article2.jpg"
+            },
+            {  "author": "Amolat Singh",
+                "date": "May 27,2007",
+                "publication": "the Sunday Times",
+                "artContent":"/home/bridgeit/Desktop/bhavana/article3.jpg"
+            },
+            {  "author": "John Griffin",
+                "date": "Aug 27,2007",
+                "publication": "the Gazette",
+                "artContent":"/home/bridgeit/Desktop/bhavana/article4.jpg"
+            }
+              ,{
+                "author": "Neha Thirani",
+                "date": "March 27,2011",
+                "publication": "the Sunday Times",
+                "artContent":"/home/bridgeit/Desktop/bhavana/article5.jpg"
+            }];
+   
+    //generating random article content
+    function random() {
+        var x = Math.floor((Math.random() * article.length) );
+        if(x<=article.length)
+        {
+            document.getElementById("r1").innerHTML = article[x].author;
+            document.getElementById("r2").innerHTML = article[x].date;
+            document.getElementById("r3").innerHTML = article[x].publication;
+            document.getElementById("r4").innerHTML = article[x].artContent;
+            setTimeout(random, 3000);
+        }
+    }
+    </script>
+    <body onload="digclock();random();">
+    <div id="clock"><br>
+    <div id="r1"><br>
+    <div id="r2"><br>
+    <div id="r3"><br>
+    <div id="r4"><br>
+    </body>
+    </html>

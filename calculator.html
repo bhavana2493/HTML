@@ -1,0 +1,83 @@
+/** 
+*@Filename:calculator.html
+*@Date:11-10-2016
+*@Purpose:Calculation by using arithmatic operations
+*@Created By:Bhavana B K
+*/
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+  <meta charset="utf-8"/>
+  <title> Html Calculator </title>
+    <script type="text/javascript">
+      //function to calculate
+        function myfunction(opt)
+        {
+        // taking input from form operation
+         var x = Number(document.operation.num1.value);
+         var y = Number(document.operation.num2.value);
+         var calculate;
+         switch(opt)
+         {
+            case  "add"    :  calculate = (x + y);   break;   
+            case  "sub"     : calculate = (x - y);   break;   
+            case  "multiply": calculate = (x * y);   break;
+            case  "div" :     calculate = (x / y);   break;
+            case  "mod"  :    calculate = (x % y);   break;  
+            default  :         alert("only + - * / allowed");
+        }  
+        // output.....
+        //document.write(calculate);
+        //document.getElementById("result").innerHTML= calculate;        
+        document.operation.result.value= calculate;
+       }
+    </script>
+  </head>
+  <body>
+   <!--stylesheet......-->   
+    <style>
+            body {
+               background:gray;
+            }
+            table  td { 
+               border : 2px solid red;
+            }
+    </style>
+    
+    
+    <!-- form which takes input-->
+    <div align="center" style="vertical-align:middle">
+
+        <table >
+        <form name="operation">
+
+            <!-- Here we will enter first number-->
+            <tr>  <td><input type="text" id="num1" name="num1" />first number </td>
+
+            <!-- Selecting option to perform calculation-->
+            <td>  <select id="opt" name="opt" -moz-border-radius="15">
+                <option value="add">add(+) </option>
+                <option value="sub">sub(-) </option>
+                <option value="multiply">multiply(*)</option>
+                <option value="div">div(/)</option>
+                <option value="mod">mod(%)</option>
+                </select></td>
+
+            <!-- Here we will enter first number-->   
+            <td> <input type="text" id="num2" name="num2"/>second number</td>
+         
+            <!-- function call onclick-->
+            <td> <input type="button" onclick="myfunction(opt.value)" value="calculate" style="background-color:yellow" /> </td>
+            </tr>
+        </table>
+
+            <!-- Displays output-->
+        <table>
+           <tr><td colspan="4" align="center" >
+               <input type="text" name="result" value="result" id="result" diabled/>result 
+               </td></tr>
+        </table>
+        </form>
+     </div>
+   </body>
+</html>
