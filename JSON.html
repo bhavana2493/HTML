@@ -23,20 +23,20 @@
           var h = d.getHours();
           var m = d.getMinutes();
           var s = d.getSeconds();
-          var ms= d.getMilliseconds();
+          //var ms= d.getMilliseconds();
           m = checkTime(m);
           s = checkTime(s);
-          document.getElementById("clock").innerHTML =h + ":" + m + ":" + s + ":" + ms;
-          setTimeout(digclock,100);
-    }
+          document.getElementById("clock").innerHTML =h + ":" + m + ":" + s ;
+          random();
+          setTimeout(digclock,1000);
 
+    }
 // to prefix zero for >10
     function checkTime(i){
         if(i<10)
         {i= "0"  + i;}
         return i;
     }
-
 // store article content in JSON
     var article = [{
                 "author": "Unknown",
@@ -75,12 +75,12 @@
             document.getElementById("r2").innerHTML = article[x].date;
             document.getElementById("r3").innerHTML = article[x].publication;
            document.getElementById("myPicture").src = article[x].artContent;
-           var t= setTimeout(random, 2000);
+          
         }
     }
     </script>
 <!-- function call-->
-    <body onload="digclock();random();">
+    <body onload="digclock();">
         <div id="tab">
         <table>
             <br>
@@ -114,4 +114,4 @@
         </table>
         </div>
     </body>
-    </html>
+</html>
