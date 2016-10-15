@@ -1,0 +1,21 @@
+body{
+     background-color: #CC0000;
+}
+#eq{
+   
+    color: #333300;
+    
+    
+    margin-left: 250px;
+   margin-right:250px;
+   
+   /* margin-top: 200px;*/
+  
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    border: 20px solid darkblue;
+    border-spacing: 40px 20px;
+    
+
+}

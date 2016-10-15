@@ -5,16 +5,19 @@ function objequal() {
 // Create arrays of property names
     var aProps = Object.getOwnPropertyNames(person1);
     var bProps = Object.getOwnPropertyNames(person2);
-    oe: if(aProps.length==bProps.length)
+     if(aProps.length!=bProps.length)
     {
+         document.getElementById("eq").innerHTML="Object entered are not equal";
+    }
+else{
        for (var i = 0; i < aProps.length; i++) {
            if(aProps[i]!==bProps[i])
            {
              document.getElementById("eq").innerHTML="Object entered are not equal";
-             break oe;
+             return;
            }
        }
-    }
+    
    
        for (var i = 0; i < aProps.length; i++) {
              var propName = aProps[i];
@@ -24,7 +27,7 @@ function objequal() {
              document.getElementById("eq").innerHTML="Object entered are not equal";
              return;
              }
-            document.getElementById("eq").innerHTML="Object entered are  equal";
     }
-   
+    document.getElementById("eq").innerHTML="Object entered are  equal";
     }
+}
