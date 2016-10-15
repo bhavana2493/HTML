@@ -1,0 +1,55 @@
+<!--/** 
+*@Filename:prefix.html
+*@Date:15-10-2016
+*@Purpose:function to prefix ‘BridgeLabz’ before anything  thing we log.
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Prefix</title>
+   <script>
+       var str = "BridgeLabz ";
+	    /**
+	     *@ param(...args) Takes variable args and print in alert box
+	     */
+	    function prefix(...args)
+	    {
+	      for (i = 0; i < args.length; i++) {
+	          document.write(str + " " + args[i] + "<br><br>");
+	      }
+	    }
+        function pre(n){
+	    /**
+	     *Takes input from user
+	     */
+	    
+	   // var n = parseInt(document.getElementById("txt"));
+	
+	    var x = [];
+	    for (var i = 0; i < n; i++) {
+	        x[i] = prompt("enter the "+(i+1)+" "+"argument:");
+	    }
+	  
+	
+	    /**
+	     *Adding prefix using apply()
+	     */
+	    prefix.apply(str, x); 
+        }  
+    
+   </script>
+  </head>
+   <body>
+       <form >
+<!-- Entering the text--->
+           Enter arguements:
+           <input type="text" name="txt" id="txt"/>
+           <input type="button"" onclick="pre(txt.value)" value="Prefix it">
+            <p id="d"></p>
+       </form>
+   </body>
+</html>
