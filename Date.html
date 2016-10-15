@@ -1,0 +1,58 @@
+<!--/** 
+*@Filename:Date.html
+*@Date:15-10-2016
+*@Purpose:Extend the date instance using method to return next day.
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>next day</title>
+   <script>
+//creating the object date using neww operator
+        var curtime=new Date();
+//array of months
+        var months =["January","February","March","April","May","June","July","August","September","October","November","December"];
+//Date Object Methods
+        var hour = curtime.getHours();
+        var min = curtime.getMinutes();
+        var sec = curtime.getSeconds();
+        var day = curtime.getDay();
+        var mon = curtime.getMonth();
+        var year = curtime.getFullYear();
+//array of days
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+//displays current date and time
+       function curentdate()
+       {
+            document.getElementById("td").innerHTML=hour+": "+min+": "+sec+" "+days[day]+" "+months[mon]+" "+year;
+            setTimeout("curentdate()",1000);
+       }
+//displays next day
+       function nextdate()  {
+//to add new methods to an existing prototype
+            Date.prototype.nextDate=function() {
+            if (day < 6) {
+                 return days[day+1];
+
+             }
+            else return days[0];
+            }
+
+   // curentdate();
+             document.getElementById("nd").innerHTML+="<br>"+"Tomorrow : " + curtime.nextDate();
+  }
+       </script>
+  </head>
+<!---onload loads current date and time-->
+  <body onload="curentdate()">
+<!---displays current date and time--->
+      <p id="td"></p>
+     <button onclick="nextdate()"> NEXT DAY </button>
+<!---displays next day-->
+      <p id="nd"></p>
+  </body>
+</html>
