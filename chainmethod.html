@@ -34,14 +34,14 @@
 //calculating sum and display..
    calculation.prototype.sum= function(){
 //checking for string or number........
-       if(isNaN(this.first))||isNaN(this.second)){
-            var sum= this.first + this.second);
+       if(isNaN(this.first)||isNaN(this.second)){
+            var sum= this.first + this.second;
        }
        else{
            var sum= Number(this.first)+Number(this.second);
         }
              
-      document.write("sum of "+this.first+" and "+this.second+" is =>"+sum);
+      document.write("sum of " +"<strong>"+this.first+"</strong>"+" and "+"<strong>"+this.second+"</strong>"+" is =>"+"<strong>"+sum+"<strong>");
 
    };
 //taking input from prompt..
@@ -53,6 +53,7 @@
   </script>
   </head>
   <body>
+      <p id="su"> </p>
   </body>
 </html>
 
