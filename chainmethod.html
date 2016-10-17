@@ -13,31 +13,41 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>chain method</title>
    <script type="text/javascript">
+//creating functon for calculation..... 
    var calculation= function(){
        this.first=0;
        this.second=0;
    };
-       
-   calculation.prototype.setfirstnum= function(first){
+
+//setting first num value.......
+    calculation.prototype.setfirstnum= function(first){
        this.first = first;
        return this;
 
    };
+//setting second num value.....
     calculation.prototype.setsecondnum= function(second){
        this.second = second;
        return this;
 
    };
+//calculating sum and display..
    calculation.prototype.sum= function(){
-      var sum= Number(this.first)+Number(this.second);
+       if(isNaN(this.first))||isNaN(this.second)){
+            var sum= this.first + this.second);
+       }
+       else{
+           var sum= Number(this.first)+Number(this.second);
+        }
+             
       document.write("sum of "+this.first+" and "+this.second+" is =>"+sum);
 
    };
+//taking input from prompt..
    var first=prompt("enter first number");
-     var second=prompt("enter second number");
-   
-   
-   
+   var second=prompt("enter second number");
+
+//using chain method to call......
    new calculation().setfirstnum(first).setsecondnum(second).sum();
   </script>
   </head>
