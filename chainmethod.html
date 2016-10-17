@@ -1,0 +1,42 @@
+<!--/** 
+*@Filename:chainmethod.html
+*@Date:17-10-2016
+*@Purpose: Calculation object which will have 3 functions first(),second() and sum(). 
+*@All these function should called by chain method.
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>chain method</title>
+   <script type="text/javascript">
+   var calculation= function(){
+       this.first=0;
+       this.second=0;
+   };
+   calculation.prototype.setfirstnum= function(first){
+       this.first = first;
+       return this;
+
+   };
+    calculation.prototype.setsecondnum= function(second){
+       this.second = second;
+       return this;
+
+   };
+   calculation.prototype.sum= function(){
+      var sum= Number(this.first)+Number(this.second);
+      document.write("sum of"+this.first+"and"+this.second+"is"+sum);
+
+   };
+   new calculation().setfirstnum('3').setsecondnum('4').sum();
+  </script>
+  </head>
+  <body>
+  </body>
+</html>
+
+   

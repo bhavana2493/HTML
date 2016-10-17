@@ -13,9 +13,7 @@
    <title>Prefix</title>
    <script>
        var str = "BridgeLabz ";
-	    /**
-	     *@ param(...args) Takes variable args and print in alert box
-	     */
+//takes input from user and prints
 	    function prefix(...args)
 	    {
 	      for (i = 0; i < args.length; i++) {
@@ -23,21 +21,16 @@
 	      }
 	    }
         function pre(n){
-	    /**
-	     *Takes input from user
-	     */
+//Takes input from user
 	    
-	   // var n = parseInt(document.getElementById("txt"));
+// var n = parseInt(document.getElementById("txt"));
 	
 	    var x = [];
 	    for (var i = 0; i < n; i++) {
 	        x[i] = prompt("enter the "+(i+1)+" "+"argument:");
 	    }
 	  
-	
-	    /**
-	     *Adding prefix using apply()
-	     */
+//Adding prefix using apply() since we cangive any no of arguments.
 	    prefix.apply(str, x); 
         }  
     
