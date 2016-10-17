@@ -17,6 +17,7 @@
        this.first=0;
        this.second=0;
    };
+       
    calculation.prototype.setfirstnum= function(first){
        this.first = first;
        return this;
@@ -29,10 +30,15 @@
    };
    calculation.prototype.sum= function(){
       var sum= Number(this.first)+Number(this.second);
-      document.write("sum of"+this.first+"and"+this.second+"is"+sum);
+      document.write("sum of "+this.first+" and "+this.second+" is =>"+sum);
 
    };
-   new calculation().setfirstnum('3').setsecondnum('4').sum();
+   var first=prompt("enter first number");
+     var second=prompt("enter second number");
+   
+   
+   
+   new calculation().setfirstnum(first).setsecondnum(second).sum();
   </script>
   </head>
   <body>
