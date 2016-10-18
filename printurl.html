@@ -22,11 +22,35 @@
         document.getElementById("u").innerHTML = newURL;
     }
     </script>
+    <style>
+        body {
+            padding-top:15%;
+            color:white;
+            text-align: center;
+            background-color:#b21842; 
+        }
+        #dis{
+            font-weight:bold;
+            font-size:30px;
+        }
+        button{
+            color:#b21842;
+            font-weight:bold;
+            font-size:20px;
+        }
+        #u{
+            font-weight:bold;
+            font-size:40px;
+            border:  solid white;
+        }
+
+    </style>
   </head>
   <body>
-      <p id="dis">Print all part of url </p>
+      <p id="dis">Prints all part of url </p>
       <button onclick="printurl_all();">Try It</button>
 <!-- displays all the part of url-->
+
       <p id="u"></p>
   </body>
 </html>
