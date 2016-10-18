@@ -1,0 +1,32 @@
+<!--/** 
+*@Filename:printurl.html
+*@Date:18-10-2016
+*@Purpose:Function to print all the parts of URL.
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+  <meta charset="utf-8"/>
+  <title> Print URL </title>
+    <script type="text/javascript">
+//function to print all parts of url....
+    function printurl_all()
+    {
+/*** 
+*@window.location.protocol prints protocol
+*@window.location.host prints the host name
+*@window.location.pathname prints the path of file where we have written
+***/ 
+        var newURL = window.location.protocol + "/" + window.location.host + "/" + window.location.pathname;
+        document.getElementById("u").innerHTML = newURL;
+    }
+    </script>
+  </head>
+  <body>
+      <p id="dis">Print all part of url </p>
+      <button onclick="printurl_all();">Try It</button>
+<!-- displays all the part of url-->
+      <p id="u"></p>
+  </body>
+</html>
