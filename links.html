@@ -1,0 +1,58 @@
+<!--/** 
+*@Filename:links.html
+*@Date:18-10-2016
+*@Purpose:program to count and print all the links in document.
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+  <meta charset="utf-8"/>
+  <title> URL count </title>
+    <script type="text/javascript">
+    function linkcount(){
+//gives the link count in document
+        var x=document.links.length;
+        document.getElementById("ln").innerHTML=x;
+    }
+    </script>
+    <style>
+        body{
+            background-color:#9ACD32;
+            margin-top:200px;
+            text-align:center
+        }
+        #h1, #h2,#h3,#h4{
+            color:#FF6347;
+            margin-left:20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #out, #ln{
+            margin-top:20px;
+            color:#6495ED;
+            margin-bottom:20px;
+            font-size: 50px;
+        }
+        button{
+            height:50px;
+            width:200px;
+            background-color:#FFD700;
+            color:#6495ED;
+            font-size: 20px;
+            font-weight: bold;
+
+
+        }
+        </style>
+  </head>
+    <body>
+        <a href="" id="h1" >HOME </a>
+        <a href="" id="h2">INFO</a>
+        <a href="" id="h3">SIGN IN</a>
+        <a href="" id="h4">SIGN UP</a>
+        <p id="out">Count's the number of links</p>
+        <button onclick="linkcount()">COUNT</button>
+        <p id="ln"></p>
+    </body>
+</html>

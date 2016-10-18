@@ -19,9 +19,12 @@
                     
                     switch(opt){
                         case  "add"    :  calculate += x;   break;   
-                        case  "sub"     : calculate -= x;   break;   
-                        case  "multiply": calculate *= x;   break;
-                        case  "div" :     calculate /= x;   break;
+                        case  "sub"     : if(calculate==0){ calculate=x}
+                                         else{ calculate -= x;}    break;   
+                        case  "multiply": if(calculate==0){ calculate=1;}
+                                          calculate *= x;   break;
+                        case  "div" :    if(calculate==0){ calculate=x}
+                                         else{ calculate /= x;}   break;
                         case  "mod"  :    calculate %= x;   break;  
                         default  :         alert("only + - * / allowed");
                     }
@@ -33,44 +36,67 @@
   <body>
 <!--stylesheet......-->   
     <style>
+
             body {
-               background:gray;
+               background:#FF6347;
             }
-            table  td { 
-               border : 2px solid red;
+            #for{
+                margin-top:100px;
+                margin-left:200px;
+               
+            }
+            table td { 
+               border : 1px solid #9ACD32;
+                border-width:80px;
+                color:  	#6495ED;
+            }
+            #en{
+               color:   	#6495ED;
+                font-size: 35px;
+            }
+
+
+            #result{
+                line-height: 30px;
+                width:740px;
+                text-align:center;
+                color:  	#6495ED;
+                background-color: yellow ;
+                font-size: 30px;
             }
     </style>
     
     
 <!-- form which takes input-->
-    <div align="center" style="vertical-align:middle">
-
-        <table >
+    <div id="for">
         <form name="operation">
-
+            <table >
 <!-- Here we will enter first number-->
-<th>Enter numbers to perform operation</th>
-            <tr>  <td><input type="text" id="num1" name="num1" /> </td>
-
+                
+                <th id="en" colspan="3" style="text-align: center;"  >Enter numbers to perform operation</th>
+                <div id="input">
+                    <tr>  <td><input type="text" id="num1" name="num1" style="text-align: center;background-color:yellow"/> </td>
 <!-- Selecting option to perform calculation-->
-            <td>  <select id="opt" name="opt" >
-                <option value="add">add(+) </option>
-                <option value="sub">sub(-) </option>
-                <option value="multiply">multiply(*)</option>
-                <option value="div">div(/)</option>
-                <option value="mod">mod(%)</option>
-                </select></td>
+                    <td>  <select id="opt" name="opt" style="text-align: center;background-color:yellow">
+                        <option value="add">add(+) </option>
+                        <option value="sub">sub(-) </option>
+                        <option value="multiply">multiply(*)</option>
+                        <option value="div">div(/)</option>
+                        <option value="mod">mod(%)</option>
+                        </select></td>
          
 <!-- function call onclick-->
-            <td> <input type="button" onclick="myfunction(opt.value)(num1.value)" value="calculate" style="background-color:yellow" /> </td>
-            </tr>
-        </table>
+                    <td> <input type="button" onclick="myfunction(opt.value)(num1.value)" value="calculate"  id="but" style="background-color:yellow"/> </td>
+                    </tr>
+                </div>
+            
+        
 
 <!-- Displays output-->
-        <table>
-           <tr><td colspan="4" align="center" >
-               <input type="text" name="result" value="result" id="result" disabled/>result 
-               </td></tr>
+
+              <tr><td colspan="3"  >
+                 <input type="text" name="Result" value="RESULT" id="result" disabled/>
+                 </td></tr>
         </table>
         </form>
      </div>
