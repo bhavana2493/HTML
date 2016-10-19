@@ -1,0 +1,93 @@
+<!--/** 
+*@Filename:CreateTable.html
+*@Date:19-10-2016
+*@Purpose:Adding row and column for existing table dynamically.
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Row and Column</title>
+   <script type="text/javascript">
+//adding row to the column..
+   function addRow(tbId){
+
+//getting existing tableId
+       var table= document.getElementById(tbId);
+
+//gives row count of the table
+       var rowCount=table.rows.length;
+       var count= Number(rowCount)-1;
+
+//gives column count
+       var columnCount=table.rows[0].cells.length;
+
+//inserting a row
+       var row = table.insertRow(rowCount);
+
+//for loop for inserting a cells to a row
+       for(var i=0; i<columnCount;i++){
+
+//insert cell........
+           var newcell=row.insertCell(i);
+
+//creating input appending that to newcell adding value to it
+           var element=document.createElement("input");
+           newcell.appendChild(element);
+           element.value= "row["+count+"]col["+i+"]";
+           
+       }
+   }
+
+//function for adding column......
+   function addColumn(tbId){
+
+//getting existing tableid and its header
+       var tabHead=document.getElementById(tbId).tHead;
+
+//creating header for that column...
+       for(var i=0; i<tabHead.rows.length; i++)
+       {
+           var newTH= document.createElement('th');
+           tabHead.rows[i].appendChild(newTH);
+           var x=prompt("Enter the column name:");
+           newTH.innerHTML=x;
+       }
+
+//getting tablebody
+       var tab_body=document.getElementById(tbId).tBodies[0];
+       var columnCount=tab_body.rows[0].cells.length;
+       
+//inserting new cells for a column......
+        for(var j=0; j<tab_body.rows.length;j++){
+            var newCell = tab_body.rows[j].insertCell(-1);
+            var element=document.createElement("input");
+            newCell.appendChild(element);
+            element.value="row["+j+"]col["+columnCount+"]";
+       }
+   }
+   </script>
+  </head>
+  <body>
+      <input type="button" id="but" value="ADD ROW" onclick="addRow('myTable')"/>
+      <input type="button" id="but1" value="ADD COLUMN" onclick="addColumn('myTable')"/>
+      <table id="myTable" border=1>
+          <thead>
+              <tr>
+              
+                  <th>First Name </th>
+                  <th>Last Name </th>
+                  </tr>
+              </thead>
+          <tbody>
+              <tr>
+                  <td><input type="text" id="fn" value="row[0]col[0]"/> </td>
+                  <td><input type="text" id="ln" value="row[0]col[1]"/> </td>
+                  </tr>
+          </tbody>
+      </table>
+  </body>
+</html>

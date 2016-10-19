@@ -1,5 +1,5 @@
 <!--/** 
-*@Filename:calculate.html
+*@Filename:currying.html
 *@Date:11-10-2016
 *@Purpose:Calculator program using Currying method.
 *@Created By:Bhavana B K
@@ -10,11 +10,10 @@
   <meta charset="utf-8"/>
   <title> Html Calculator </title>
     <script type="text/javascript">
-    var calculate=0;
+    
 //function to calculate using currying method
-        function myfunction(opt)
-        {
-            return function(num1){
+        function myfunction(opt){
+                return function(num1){
                     var x= Number(num1);
                     
                     switch(opt){
@@ -30,7 +29,7 @@
                     }
                     document.operation.result.value= calculate;
                 }
-        }
+            }
     </script>
   </head>
   <body>
@@ -38,7 +37,7 @@
     <style>
 
             body {
-               background:#FF6347;
+               background:#d53b12;
             }
             #for{
                 margin-top:100px;
@@ -46,12 +45,12 @@
                
             }
             table td { 
-               border : 1px solid #9ACD32;
+               border : 1px solid #2ede03;
                 border-width:80px;
-                color:  	#6495ED;
+                color:  	#086fbb;
             }
             #en{
-               color:   	#6495ED;
+               color:   	#086fbb;
                 font-size: 35px;
             }
 
@@ -60,8 +59,8 @@
                 line-height: 30px;
                 width:740px;
                 text-align:center;
-                color:  	#6495ED;
-                background-color: yellow ;
+                color:  	#086fbb;
+                background-color: #ca9b09 ;
                 font-size: 30px;
             }
     </style>
@@ -75,9 +74,9 @@
                 
                 <th id="en" colspan="3" style="text-align: center;"  >Enter numbers to perform operation</th>
                 <div id="input">
-                    <tr>  <td><input type="text" id="num1" name="num1" style="text-align: center;background-color:yellow" autofocus/> </td>
+                    <tr>  <td><input type="text" id="num1" name="num1" style="text-align: center;background-color:#ca9b09" autofocus/> </td>
 <!-- Selecting option to perform calculation-->
-                    <td>  <select id="opt" name="opt" style="text-align: center;background-color:yellow">
+                    <td>  <select id="opt" name="opt" style="text-align: center;background-color:#ca9b09">
                         <option value="add">add(+) </option>
                         <option value="sub">sub(-) </option>
                         <option value="multiply">multiply(*)</option>
@@ -86,7 +85,7 @@
                         </select></td>
          
 <!-- function call onclick-->
-                    <td> <input type="button" onclick="myfunction(opt.value)(num1.value)" value="calculate"  id="but" style="background-color:yellow"/> </td>
+                    <td> <input type="button" onclick="myfunction(opt.value)(num1.value)" value="calculate"  id="but" style="background-color:#ca9b09"/> </td>
                     </tr>
                 </div>
             
