@@ -63,17 +63,37 @@
        
 //inserting new cells for a column......
         for(var j=0; j<tab_body.rows.length;j++){
-            var newCell = tab_body.rows[j].insertCell(-1);
+            var newCell = tab_body.rows[j].insertCell(columnCount);
             var element=document.createElement("input");
             newCell.appendChild(element);
             element.value="row["+j+"]col["+columnCount+"]";
        }
    }
+
+//function to deleteColumn....
+   function deleteColumn(tbId){
+       var allRows = document.getElementById(tbId).rows;
+	   for (var i=0; i<allRows.length; i++) {
+           var colCount=Number(allRows[i].cells.length); 
+           if (colCount> 1) {
+               allRows[i].deleteCell(colCount-1);
+            }
+        }
+   }
+//function to delete Rows......
+   function deleteRows(tbId){
+       var allRows = document.getElementById(tbId);
+       var rowCount=Number(allRows.rows.length);
+       if(rowCount>1){
+       allRows.deleteRow(rowCount-1);
+    }
+   }
    </script>
   </head>
   <body>
       <input type="button" id="but" value="ADD ROW" onclick="addRow('myTable')"/>
-      <input type="button" id="but1" value="ADD COLUMN" onclick="addColumn('myTable')"/>
+      <input type="button" id="but" value="ADD COLUMN" onclick="addColumn('myTable')"/>
+      
       <table id="myTable" border=1>
           <thead>
               <tr>
@@ -89,5 +109,7 @@
                   </tr>
           </tbody>
       </table>
+      <input type="button" id="but" value="DELETE ROW" onclick="deleteRows('myTable')"/>
+      <input type="button" id="but" value="DELETE COLUMN" onclick="deleteColumn('myTable')"/>
   </body>
 </html>
