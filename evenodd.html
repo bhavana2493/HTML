@@ -1,0 +1,72 @@
+<!--/** 
+*@Filename:evenodd.html
+*@Date:20-10-2016
+*@Purpose:Calculate how many even and odd number between 0 to 20 using filter function in js. 
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+       <meta charset="utf-8"/>
+       <title> Form action </title>
+       </head>
+       <script type="text/javascript">
+               var x = [];
+//taking the range......
+               function enter(){
+                       var min_no=parseInt(document.getElementById("min").value);
+                       var max_no=parseInt(document.getElementById("max").value);
+                       var range= max_no - min_no;
+                       if(min_no<max_no){
+                            for(var i=0;i<=range;i++){
+                           x[i]=min_no;
+                           min_no=min_no+1;
+                       }
+                       }
+                      else{
+                          alert("enter propper range:");
+                      }
+                       return x;
+                   }
+//displaying even numbers in the range
+              function even(){
+                   enter();
+                  document.getElementById("no").innerHTML= x.filter(calleven);
+               }
+//displaying odd numbers in the range
+               function odd(){
+                   enter();
+                  document.getElementById("no").innerHTML= x.filter(callodd);
+               }
+//filter for checking even
+               function calleven(x){
+                   
+                   return x=(x%2==0);
+                   
+               }
+//filter for checking odd
+               function callodd(x){
+                    
+                   return x=(x%2==1);
+                   
+               }
+           </script>
+       <body >
+           <center>
+               <form>
+               <p id="dis">Display Even and Odd No</p>
+               <div id="rnge">
+                   Enter The Range:
+                   <input type="text" name="min" id="min" />
+                   <---->
+                   <input type="text" name="max" id="max" />
+               </div>
+               <div id="but">
+                   <input type="button" value="EVEN" id="ev" onclick="even()"/>
+                   <input type="button" value="ODD" id="od" onclick="odd()"/>
+               </div>
+               <p id="no"></p>
+               </form>
+           </center>
+       </body>
+</html>
