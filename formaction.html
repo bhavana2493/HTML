@@ -1,0 +1,32 @@
+<!--/** 
+*@Filename:formaction.html
+*@Date:20-10-2016
+*@Purpose:student information form with fields a)Name b)Roll c)Age. 
+*@*@*@*@*@On submitting the form the information should be displayed on another page.
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+  <meta charset="utf-8"/>
+  <title> Form action </title>
+    <link rel="stylesheet" type="text/css" href="for_action.css">
+  </head>
+  <body>
+      <center>
+<!----Form Action redirecting to another page---->
+          <form action="display.html" >
+              <p id="ti">Student Information Form</p>
+              Enter Student Name:
+              <input type="text" id="sname" name="sname"/><br>
+              Enter Roll No:
+              <input type="text" id="roll" name="roll"/><br>
+              Enter age:
+              <input type="text" id="age" name="age"/><br>
+              <input type="submit"  value="Submit" id="su" />
+              <input type="reset" value="Reset" id="re"/>
+              </form>
+      </center>
+  </body>
+</html>
+
