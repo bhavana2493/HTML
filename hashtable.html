@@ -1,0 +1,97 @@
+<!--/** 
+*@Filename:formaction.html
+*@Date:21-10-2016
+*@Purpose:Implementing Hash Table using JS prototype...
+*@Created By:Bhavana B K
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+  <meta charset="utf-8"/>
+  <title> Form action </title>
+  </head>
+  <body>
+      <script>
+          function HashEntry(key,value){
+              this.key=key;
+              this.value=value;
+              this.entry;
+          }
+          HashEntry.prototype = {
+               getKey : function() {
+                  return this.key;
+                },
+                getValue : function() {
+                  return this.value;  
+                },
+                setNext : function(entry) {
+                    this.entry = entry;
+                },
+                getNext : function() {
+                    return this.entry;
+                }
+            };
+            var HashTable = function(){
+                this.tableSize = 100;
+                this.table = []; //this will be holding HashEntry(s)
+            };
+
+            HashTable.prototype = {
+                hashFunction: function(input) {
+                    return input % this.tableSize; //return an hash
+                },
+                put : function(key, value) {
+                    var hash = this.hashFunction(key);
+                    var table = this.table;
+                    if(table[hash] === undefined) {
+                        table[hash] = new HashEntry(key, value);
+                    } else {
+                        var curr = table[hash];
+                        while(curr.getNext()!==undefined) {
+                            curr = curr.getNext();
+                        }
+                        curr.setNext(new HashEntry(key, value));
+                    }
+                },
+                get : function(key) {
+                    var hash = this.hashFunction(key);
+                    var table = this.table;
+                    var currEntry = table[hash];
+        
+                    if(currEntry === undefined) console.log("null");
+                    if(currEntry.getKey() === key) {
+                        console.log(currEntry.getKey()+"------>"+currEntry.getValue());
+                    } else {
+                        if(currEntry.getNext()===undefined) console.log("null");
+                        else{
+                            while(currEntry.getNext()!==undefined) {
+                                currEntry = currEntry.getNext();
+                                if(currEntry.getKey() === key) {
+                                    console.log(currEntry.getKey()+"------>"+currEntry.getValue());
+                            } 
+                        }
+                    }
+                }
+            }
+        };
+          var hashTable = new HashTable();
+            /*hashTable.put(123, "Bhavana");
+            hashTable.put(12, "Nikita");
+            hashTable.put(112,"Kalitha");
+            console.log(hashTable.get(12));
+            console.log(hashTable.get(123));
+            console.log(hashTable.get(112));//linked
+            console.log(hashTable.get(134));*/
+            </script>
+            <center>
+                <p id="dis">Enter the Hash Table Key and Value</p>
+                Key: <input type="text" id="key" name="key"/>
+                Value: <input type="text" id="val" name="val"/>
+                <input type="button" onclick="hashTable.put(key.value,val.value)" value="add"/>
+                <br><br>
+                <p id="srch">Search in Hashtable</p>
+                Key: <input type="text" id="key1s" name="key1s"/>
+                <input type="button" onclick="hashTable.get(key1s.value)" value="search"/>
+                <p id="show"></p>
+  </body>
+</html>
